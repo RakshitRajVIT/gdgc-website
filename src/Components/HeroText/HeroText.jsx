@@ -8,6 +8,7 @@ export default function HeroText() {
         <h1 className="hero__heading">
           <span className="hero__we">we are</span>{' '}
           <span className="hero__gdgc">gdgc</span>
+          <span className="hero__dot" aria-hidden="true"></span>
         </h1>
         <p className="hero__sub">VIT BHOPAL</p>
       </div>
@@ -32,6 +33,15 @@ export default function HeroText() {
           <span className="hero__location-coords">23°04′37″N 76°51′04″E</span>
         </span>
       </a>
+
+      {/* Bottom-right brand (logo + stacked text) */}
+      <div className="hero__brand" aria-hidden="true">
+        <img src="/GDG Logo.svg" alt="GDG logo" className="hero__brand-logo" />
+        <div className="hero__brand-text">
+          <div className="hero__brand-line1">GDGC</div>
+          <div className="hero__brand-line2">VIT BHOPAL</div>
+        </div>
+      </div>
     </section>
   )
 }

@@ -3,6 +3,7 @@
 :root {
   --hero-blue: #4285F4; 
   --hero-black: #000000;
+  --hero-red: #ff2d55;
 } 
 
 .hero {
@@ -39,6 +40,30 @@
   justify-content: center;
   animation: heroFadeIn 700ms ease-out 100ms both; 
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
+}
+
+.hero__dot {
+  display: inline-block;
+  width: clamp(10px, 1.2vw, 18px);
+  height: clamp(10px, 1.2vw, 18px);
+  margin-left: 0.2rem;
+  border-radius: 0%;
+  background: var(--hero-red);
+  vertical-align: middle;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  transform: translateY(-6%) scale(0.96);
+  animation: dotPop 420ms cubic-bezier(.2,.9,.3,1) 240ms both;
+}
+
+@keyframes dotPop {
+  from {
+    opacity: 0;
+    transform: translateY(6%) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-6%) scale(1);
+  }
 }
 
 .hero__we {
@@ -124,6 +149,48 @@
   outline: none;
 }
 
+/* bottom-right brand */
+.hero__brand {
+  position: fixed;
+  right: clamp(12px, 2.2vw, 28px);
+  bottom: clamp(12px, 2.2vw, 28px);
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem; /* slightly increased */
+  pointer-events: none; /* decorative */
+  user-select: none;
+  animation: heroFadeIn 700ms ease-out 420ms both;
+}
+
+.hero__brand-logo {
+  width: clamp(36px, 4.8vw, 60px); /* larger */
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+}
+
+.hero__brand-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.hero__brand-line1 {
+  font-family: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem); /* larger */
+  color: var(--hero-black);
+}
+
+.hero__brand-line2 {
+  font-family: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto;
+  font-weight: 600;
+  font-size: clamp(1.05rem, 2.0vw, 1.3rem); /* larger */
+  letter-spacing: 0.06em;
+  color: #111827;
+}
 
 @media (max-width: 480px) {
   .hero__location {
@@ -136,14 +203,13 @@
   .hero__location-coords {
     font-size: 0.72rem;
   }
-}
-
-/* fade in animation */
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.995);
+  .hero__brand {
+    right: 8px;
+    bottom: 8px;
   }
+  .hero__brand-logo { width: 32px }
+  .hero__brand-line1 { font-size: 1.05rem }
+  .hero__brand-line2 { font-size: 0.95rem }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
