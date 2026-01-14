@@ -69,6 +69,47 @@
   animation: heroFadeIn 700ms ease-out 220ms both;
 }
 
+/* bottom-left location (anchored to viewport) */
+.hero__location {
+  position: fixed; /* anchor to viewport bottom-left */
+  left: clamp(12px, 2.2vw, 28px);
+  bottom: clamp(12px, 2.2vw, 28px);
+  text-align: left;
+  z-index: 30;
+  animation: heroFadeIn 700ms ease-out 380ms both;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.hero__location-name {
+  font-family: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto;
+  color: var(--hero-blue);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.hero__location-coords {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: #6b7280; /* gray */
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  margin-top: 0.12rem;
+}
+
+@media (max-width: 480px) {
+  .hero__location {
+    left: 10px;
+    bottom: 8px;
+  }
+  .hero__location-name {
+    font-size: 0.95rem;
+  }
+  .hero__location-coords {
+    font-size: 0.72rem;
+  }
+}
+
 /* fade in animation */
 @keyframes heroFadeIn {
   from {
