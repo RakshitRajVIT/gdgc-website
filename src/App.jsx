@@ -6,6 +6,7 @@ import Tech from "./pages/Tech";
 import Home from "./pages/Home";
 import WebDTeam from "./pages/WebDTeam";
 import SplashScreen from "./Components/SplashScreen/SplashScreen";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -25,6 +26,7 @@ function App() {
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>
+            <Footer />
         </>
     );
 }
