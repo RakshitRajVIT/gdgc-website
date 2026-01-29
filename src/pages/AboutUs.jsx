@@ -1,47 +1,280 @@
 
 export default function AboutUs() {
   return (
-    <div className="w-full min-h-screen bg-white p-6 md:p-12 flex flex-col items-center">
-      {/* Title Section */}
-      <div className="w-full flex flex-col items-start">
-        <div className="flex items-center gap-4">
-          <div className="text-yellow-500 text-4xl font-bold">||</div>
-          <h1 className="text-3xl md:text-4xl font-bold">About Us</h1>
-          <div className="text-yellow-500 text-3xl font-bold">●●●</div>
+    <div className="w-full min-h-screen bg-white">
+      {/* Desktop View */}
+      <div className="hidden md:block px-8 lg:px-16 py-12">
+        {/* Title Section */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-4">
+            {/* Yellow Diagonal Bars */}
+            <div className="flex gap-0.5">
+              <div className="w-6 h-16 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+              <div className="w-6 h-16 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+            </div>
+            
+            {/* About Us Text */}
+            <h1 className="text-4xl font-bold tracking-wide">About Us</h1>
+            
+            {/* Three Overlapping Yellow Circles */}
+            <div className="flex items-center -space-x-3">
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            </div>
+            
+            {/* Arrow */}
+            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        {/* Intro Paragraph */}
+        <p className="text-gray-800 text-sm leading-relaxed mb-6">
+          Google Developer Group on Campus are university-based community groups for students interested in Google developer
+          technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are
+          welcome. By joining a GDGC, students grow their knowledge in a peer-to-peer learning environment and build solutions
+          for local businesses and their communities.
+        </p>
+
+        {/* Two Column Layout */}
+   <div className="flex gap-6 items-start">
+  {/* Left: College Collage Image */}
+  <div className="w-1/2 max-w-xl">
+    <img 
+      src="/College.png" 
+      alt="GDG Events Collage" 
+      className="w-full h-auto rounded-lg object-cover"
+    />
+  </div>
+  {/* Right: Key Opportunities */}
+  <div className="w-1/2 max-w-xl">
+    <h2 className="text-lg font-bold mb-4">Key Opportunities Provided by GDGCs</h2>
+    <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
+      <p>
+        <span className="font-bold">&gt; Peer-Led Technical Growth:</span> Students advance their technical
+        knowledge of Google technologies and industry tools through hands-on, peer-to-peer workshops and collaborative events.
+      </p>
+      <p>
+        <span className="font-bold">&gt; Real-World Problem:</span> Members build professional portfolios by
+        developing technology-based solutions for local organizations, turning theoretical knowledge into practical industry
+        experience.
+      </p>
+      <p>
+        <span className="font-bold">&gt; Global Visibility and Inspiration:</span> The community provides a
+        platform to showcase prototypes to industry leaders while connecting students with success stories that inspire them to
+        become world-class change makers.
+      </p>
+    </div>
+  </div>
+</div>
+      </div>
+
+      {/* Who We Are Section - Desktop */}
+      <div className="hidden md:block px-8 lg:px-16 py-16 bg-[#F8F9FA]">
+        {/* Title Section */}
+        <div className="flex justify-center mb-8">
+          <div className="flex items-center gap-4">
+            {/* Yellow Diagonal Bars */}
+            <div className="flex gap-0.5">
+              <div className="w-6 h-16 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+              <div className="w-6 h-16 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+            </div>
+            
+            {/* Who We Are Text */}
+            <h1 className="text-4xl font-bold tracking-wide">Who We Are</h1>
+            
+            {/* Three Overlapping Yellow Circles */}
+            <div className="flex items-center -space-x-3">
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+              <div className="w-10 h-10 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            </div>
+            
+            {/* Arrow */}
+            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-800 text-sm leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+          We are a vibrant community of passionate developers, designers, and tech enthusiasts at VIT Bhopal University. 
+          United by our love for Google technologies and innovation, we create, learn, and grow together through workshops, 
+          hackathons, and collaborative projects that make a real impact.
+        </p>
+      </div>
+
+      {/* Bento Grid Section - Desktop */}
+      <div className="hidden md:block px-8 lg:px-16 py-16 bg-[#F8F9FA]">
+        <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto">
+          {/* Large team photo - left side - taller to show full team */}
+          <div className="col-span-5 rounded-2xl overflow-hidden shadow-lg border-2 border-black h-[650px]">
+            <img src="/gdgc-team-formal.jpg" alt="GDG Team Formal" className="w-full h-full object-cover object-center" />
+          </div>
+          
+          <div className="col-span-7 flex flex-col gap-4">
+            {/* Top right - Google Olympics banner - wider aspect ratio */}
+            <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-black h-[200px]">
+              <img src="/google-olympics-banner.jpg" alt="Google Olympics" className="w-full h-full object-cover object-center" />
+            </div>
+            
+            {/* Middle row - Team selfie and flag */}
+            <div className="grid grid-cols-7 gap-4">
+              {/* Team selfie - wider for group photo */}
+              <div className="col-span-4 rounded-2xl overflow-hidden shadow-lg border-2 border-black h-[210px]">
+                <img src="/gdgc-team-selfie.jpg" alt="Team Selfie" className="w-full h-full object-cover object-center" />
+              </div>
+              
+              {/* Google Olympics flag */}
+              <div className="col-span-3 rounded-2xl overflow-hidden shadow-lg border-2 border-black h-[210px]">
+                <img src="/google-olympics-flag.jpg" alt="Google Olympics Flag" className="w-full h-full object-cover object-center" />
+              </div>
+            </div>
+            
+            {/* Bottom right - Team casual photo - wider for group */}
+            <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-black h-[220px]">
+              <img src="/gdgc-team-casual.jpg" alt="Team Casual" className="w-full h-full object-cover object-center" />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Black Bento Placeholder */}
-      <div className="w-full h-52 bg-black rounded-2xl my-8"></div>
+      {/* Mobile View */}
+      <div className="md:hidden px-4 py-6">
+        {/* GDG VIT Badge */}
+        <div className="border border-gray-300 rounded-lg p-2 mb-4 inline-flex items-center gap-2">
+          <div className="flex gap-0.5">
+            <span className="w-2 h-2 rounded-full bg-[#EA4335]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#FBBC04]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#34A853]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#4285F4]"></span>
+          </div>
+          <span className="text-sm font-medium">GDG VIT</span>
+        </div>
 
-      {/* Content */}
-      <div className="w-full max-w-4xl text-gray-800 space-y-4">
-        <p>
-          Google Developer Groups on Campus are university-based community groups for students
-          interested in Google developer technologies. By joining a GDG, students grow their
-          knowledge in peer-to-peer learning and build solutions for local communities.
+        {/* Title Section */}
+        <div className="flex items-center gap-3 mb-4">
+          {/* Yellow Diagonal Bars */}
+          <div className="flex gap-0.5">
+            <div className="w-3 h-8 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+            <div className="w-3 h-8 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+          </div>
+          
+          {/* About Us Text */}
+          <h1 className="text-xl font-bold">About Us</h1>
+          
+          {/* Three Overlapping Yellow Circles */}
+          <div className="flex items-center -space-x-2">
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+          </div>
+          
+          {/* Arrow */}
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+
+        {/* Intro Paragraph */}
+        <p className="text-gray-700 text-xs leading-relaxed mb-4">
+          Google Developer Group on Campus are university-based community groups for students interested in Google developer
+          technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are
+          welcome.
         </p>
 
-        <h2 className="text-xl font-semibold mt-4">Key Opportunities Provided by GDGx:</h2>
+        {/* Key Opportunities */}
+        <h2 className="text-sm font-bold mb-3">Key Opportunities Provided by GDGCs</h2>
+        <div className="space-y-3 text-gray-700 text-xs leading-relaxed mb-6">
+          <p>
+            <span className="font-bold">&gt; Peer-Led Technical Growth:</span> Students advance their technical
+            knowledge of Google technologies and industry tools through hands-on, peer-to-peer workshops and collaborative events.
+          </p>
+          <p>
+            <span className="font-bold">&gt; Real-World Problem:</span> Members build professional portfolios by
+            developing technology-based solutions for local organizations, turning theoretical knowledge into practical industry
+            experience.
+          </p>
+          <p>
+            <span className="font-bold">&gt; Global Visibility and Inspiration:</span> The community provides a
+            platform to showcase prototypes to industry leaders while connecting students with success stories that inspire them to
+            become world-class change makers.
+          </p>
+        </div>
 
-        <ul className="list-disc pl-6 space-y-2">
-          <li>
-            <strong>In-Depth Technical Growth:</strong> Workshops, sessions, and real-world projects
-            that enhance engineering confidence.
-          </li>
-          <li>
-            <strong>Professional Mentorship:</strong> Guidance from experienced industry-level mentors
-            and technical experts.
-          </li>
-          <li>
-            <strong>Global Visibility:</strong> Exposure to global events, networking opportunities,
-            and international collaboration.
-          </li>
-        </ul>
+        {/* College Image */}
+        <div className="w-full">
+          <img 
+            src="/College.png" 
+            alt="GDG Events Collage" 
+            className="w-full h-auto rounded-lg"
+          />
+        </div>
+      </div>
 
-        {/* Collage Image */}
-        <div className="w-full flex justify-center mt-6">
-          <img src="/College.png" alt="College Collage" className="w-full max-w-xl rounded-xl shadow" />
+      {/* Who We Are Section - Mobile */}
+      <div className="md:hidden px-4 py-8 bg-[#F8F9FA]">
+        {/* Title Section */}
+        <div className="flex items-center gap-3 mb-4">
+          {/* Yellow Diagonal Bars */}
+          <div className="flex gap-0.5">
+            <div className="w-3 h-8 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+            <div className="w-3 h-8 bg-[#FBBC04] transform -skew-x-12 border border-[#555]"></div>
+          </div>
+          
+          {/* Who We Are Text */}
+          <h1 className="text-xl font-bold">Who We Are</h1>
+          
+          {/* Three Overlapping Yellow Circles */}
+          <div className="flex items-center -space-x-2">
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+            <div className="w-5 h-5 rounded-full bg-[#FBBC04] border border-[#555]"></div>
+          </div>
+          
+          {/* Arrow */}
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-700 text-xs leading-relaxed mb-6">
+          We are a vibrant community of passionate developers, designers, and tech enthusiasts at VIT Bhopal University. 
+          United by our love for Google technologies and innovation, we create, learn, and grow together.
+        </p>
+      </div>
+
+      {/* Bento Grid Section - Mobile */}
+      <div className="md:hidden px-4 py-8 bg-[#F8F9FA]">
+        <div className="flex flex-col gap-3">
+          {/* Large team photo - taller for full team */}
+          <div className="rounded-xl overflow-hidden border-2 border-black h-[280px]">
+            <img src="/gdgc-team-formal.jpg" alt="GDG Team Formal" className="w-full h-full object-cover object-center" />
+          </div>
+          
+          {/* Google Olympics banner */}
+          <div className="rounded-xl overflow-hidden border-2 border-black h-[140px]">
+            <img src="/google-olympics-banner.jpg" alt="Google Olympics" className="w-full h-full object-cover object-center" />
+          </div>
+          
+          {/* Team selfie and flag - side by side */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="rounded-xl overflow-hidden border-2 border-black h-[140px]">
+              <img src="/gdgc-team-selfie.jpg" alt="Team Selfie" className="w-full h-full object-cover object-center" />
+            </div>
+            <div className="rounded-xl overflow-hidden border-2 border-black h-[140px]">
+              <img src="/google-olympics-flag.jpg" alt="Google Olympics Flag" className="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+          
+          {/* Team casual photo */}
+          <div className="rounded-xl overflow-hidden border-2 border-black h-[160px]">
+            <img src="/gdgc-team-casual.jpg" alt="Team Casual" className="w-full h-full object-cover object-center" />
+          </div>
         </div>
       </div>
     </div>
