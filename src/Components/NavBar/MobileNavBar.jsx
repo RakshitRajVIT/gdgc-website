@@ -239,6 +239,9 @@ function MobileNavBar() {
                         <MobileNavLink to="/about" onNavigate={closeMenu}>
                             About
                         </MobileNavLink>
+                        <MobileNavLink to="/event-registration" onNavigate={closeMenu}>
+                            Register Event
+                        </MobileNavLink>
                     </div>
 
                     <div className="p-4">

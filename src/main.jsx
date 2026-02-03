@@ -15,6 +15,7 @@ import Tech from "./pages/Tech";
 import NonTech from "./pages/NonTech";
 import AllEvents from "./pages/AllEventsPage";
 import AboutUs from "./pages/AboutUs";
+import EventRegistration from "./pages/EventRegistration";
 import { ScrollProvider } from "./context/ScrollContext";
 
 function ScrollToTop() {
@@ -56,8 +57,7 @@ createRoot(document.getElementById("root")).render(
                             path="/teams/nonTech/:teamParam"
                             element={<NonTech />}
                         />
-                        <Route path="allEvents" element={<AllEvents />} />
-                        <Route path="about" element={<AboutUs />} />
+                        <Route path="allEvents" element={<AllEvents />} />                        <Route path="event-registration" element={<EventRegistration />} />                        <Route path="about" element={<AboutUs />} />
                         <Route path="*" element={<Navigate to="/" replace />} />
                     </Route>
                 </Routes>

@@ -221,6 +221,15 @@ function DesktopNavBar() {
                             <Link to="/about">About</Link>
                         </NavigationMenuLink>
                     </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                        <NavigationMenuLink
+                            asChild
+                            className={navigationMenuTriggerStyle()}
+                        >
+                            <Link to="/event-registration">Register</Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
 
