@@ -159,7 +159,6 @@
     50% { opacity: 0.5; transform: scale(0.95); }
 }
 
-/* Magnetic link underline */
 .magnetic-link::after {
     @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 origin-left scale-x-0 transition-transform duration-300;
     background: linear-gradient(90deg, hsl(217 91% 60%), hsl(142 76% 46%));
@@ -170,7 +169,6 @@
     font-family: 'Montserrat', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* Logo rotation animation (CSS for best performance) */
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

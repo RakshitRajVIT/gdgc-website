@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Home, Gamepad2, Users, Store, Info } from 'lucide-react';
+import './Navbar.css';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home, underlineColor: '#3b82f6' },
