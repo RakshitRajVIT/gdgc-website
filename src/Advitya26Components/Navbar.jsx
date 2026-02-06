@@ -60,6 +60,14 @@ export function GlobalNavbar({ showLogo = true }) {
     }
   };
 
+  const handleLogoKeyDown = (e) => {
+    if (!isMobile) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setIsOpen((v) => !v);
+    }
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -77,6 +85,11 @@ export function GlobalNavbar({ showLogo = true }) {
           className="w-17 h-17 md:w-20 md:h-20 lg:w-24 lg:h-24 cursor-pointer flex items-center justify-center"
           whileHover={{ scale: 1.25, rotate: 360 }}
           transition={{ duration: 0.3, ease: 'linear',}}
+          onClick={handleToggle}
+          onKeyDown={handleLogoKeyDown}
+          role={isMobile ? 'button' : undefined}
+          tabIndex={isMobile ? 0 : undefined}
+          aria-label={isMobile ? (isOpen ? 'Close menu' : 'Open menu') : 'Logo'}
           style={{
             filter: 'drop-shadow(0 0 10px rgba(232, 239, 211, 0.6)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.4))',
             transformOrigin: 'center',
@@ -101,9 +114,8 @@ export function GlobalNavbar({ showLogo = true }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="rounded-none lg:rounded-full absolute left-0 right-0 top-full z-50 lg:static lg:rounded-full overflow-hidden"
+              className="rounded-none lg:rounded-full absolute left-0 right-0 top-full z-50 lg:static overflow-hidden"
               style={{
-                border: '2px ',
                 background: '#f7f6e4',
                 backgroundColor: '#faf8e0',
                 backdropFilter: 'blur(6px)',
@@ -143,12 +155,13 @@ export function GlobalNavbar({ showLogo = true }) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-20 right-4 rounded-2xl"
+              className="fixed top-20 right-4 rounded-2xl z-999"
               style={{
                 background: '#faf8e0',
                 backdropFilter: 'blur(6px)',
                 WebkitBackdropFilter: 'blur(6px)',
                 boxShadow: '0 0 15px rgba(21, 21, 21, 0.6), 0 0 30px rgba(32, 18, 18, 0.4)',
+                border: 'none',
               }}
             >
               <ul className="flex flex-col gap-1 p-4">
