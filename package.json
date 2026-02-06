@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "daisyui": "^5.5.17",
     "framer-motion": "^12.31.0",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.562.0",
     "motion": "^12.31.0",
     "react": "^19.2.0",

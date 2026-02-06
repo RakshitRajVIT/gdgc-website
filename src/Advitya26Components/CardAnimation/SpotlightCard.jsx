@@ -1,12 +1,6 @@
-/**
- * SpotlightCard - A card component with grid pattern background
- * 
- * @param {Object} props
- * @param {React.ReactNode} props.children - Content to render inside the card
- * @param {string} props.className - Additional classes for the card container
- * @param {string} props.bgColor - Background color of the card (default: white)
- * @param {boolean} props.showGrid - Whether to show grid pattern (default: true)
- */
+// SpotlightCard Component
+// props.children - Content to render inside the card
+
 export default function SpotlightCard({ children, className = '', bgColor = 'white', showGrid = true }) {
     return (
         <div className={`relative p-1 ${className}`}>
