@@ -19,9 +19,9 @@ import toolsSvg from '../assets/tools.svg'
 
 export default function AboutCard() {
     return (
-        <SpotlightCard className="w-full h-full" bgColor="#E3F2FD">
+        <SpotlightCard className="w-full min-h-[140vh] sm:min-h-[110vh] md:min-h-[100vh] lg:min-h-0 lg:h-full" bgColor="#E3F2FD">
             <FallingImagesBackground
-                images={[aiSvg,alienSvg,arroeSvg,chipSvg,cloudSvg,dataSvg,gearSvg,mlSvg,palySvg,starSvg,gear1Svg,gitSvg,dollarSvg,monitorSvg,toolsSvg]}
+                images={[aiSvg,alienSvg, arroeSvg,chipSvg,cloudSvg,dataSvg,gearSvg,mlSvg,palySvg,starSvg,gear1Svg,gitSvg,dollarSvg,monitorSvg,toolsSvg]}
                 imageWidth={150}
                 imageHeight={150}
                 gravity={0.4}
@@ -32,16 +32,15 @@ export default function AboutCard() {
                 bottomDepth={90}
                 hoverForce={8}
             >
-                <div className="w-full h-full flex flex-col justify-between p-8 md:p-12 lg:p-16">
-                    {/* Title - Top Left, moved down */}
-                    <div className="self-start max-w-3xl mt-8 md:mt-12 lg:mt-16">
+                <div className="w-full h-full flex flex-col">
+                    
+                    <div className="self-start max-w-3xl mb-auto">
                         <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[1] uppercase text-gray-900">
                             Do Crazy Things That Matter.
                         </h1>
                     </div>
 
-                    {/* Subtitle - Bottom Right with narrower width */}
-                    <div className="self-end max-w-xs md:max-w-sm lg:max-w-md pb-9 md:pb-17 lg:pb-21">
+                    <div className="self-end max-w-xs sm:max-w-sm md:max-w-md mt-[25vh] sm:mt-[15vh] md:mt-[10vh] lg:mt-auto">
                         <h2 className="text-base md:text-xl lg:text-2xl font-black tracking-[4px] md:tracking-[5px] text-gray-900 uppercase mb-8 md:mb-10 lg:mb-12 text-right">
                             About GDG
                         </h2>
@@ -49,6 +48,8 @@ export default function AboutCard() {
                             Google Developer Group on Campus are university-based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome.
                         </p>
                     </div>
+
+                    <div className="h-[40vh] sm:h-[30vh] md:h-[25vh] lg:h-0"></div>
                 </div>
             </FallingImagesBackground>
         </SpotlightCard>
