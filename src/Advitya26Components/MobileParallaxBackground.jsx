@@ -73,13 +73,14 @@ const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
                     style={{ y: greatwall }}
                     initial={{ y: 700 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 2.5, ease: "easeInOut" }}
+                    // transition={{ duration: 2.5, ease: "easeInOut" }}
+                    transition={{ duration: 1.5,delay:2, ease: "easeInOut" }}
                     className='absolute w-full h-auto z-0 bottom-0'
                 >
                     <motion.img
                         src="/MobileOlympicsImages/greatwall-final.png"
                         alt="great wall"
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85vh] sm:h-[50vh] z-0 object-cover"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90vh] sm:h-[50vh] z-0 object-cover"
                     />
 
                 </motion.div>
@@ -89,13 +90,13 @@ const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
                     style={{ y: colosseum }}
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 2, delay:0.5, ease: "easeInOut" }}
+                    transition={{ duration: 1, delay:2, ease: "easeInOut" }}
                     className='absolute w-full h-[70vh] z-80 bottom-0'
                 >
                     <motion.img
                         src="/olympicsImages/Colosseum.png"
                         alt="Colosseum"
-                        className='absolute -bottom-60 mx-auto h-[80vh] z-80 object-contain'
+                        className='absolute -bottom-60 mx-auto h-[95vh] z-80 object-contain'
                     />
                 </motion.div>
             </motion.div>

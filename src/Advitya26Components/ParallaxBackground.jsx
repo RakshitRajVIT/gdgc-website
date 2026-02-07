@@ -124,7 +124,7 @@ const ParallaxBackground = ({ onRingsFadeStart = () => { } }) => {
                     style={{ y : colosseum }}
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 1,delay: 3.5, ease: "easeInOut" }}
+                    transition={{ duration: 0.5,delay: 2.5, ease: "easeIn" }}
                     className='absolute w-full h-[90vh] z-80 bottom-0'
                 >
                     <motion.img
