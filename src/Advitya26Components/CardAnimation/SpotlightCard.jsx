@@ -10,9 +10,9 @@ export default function SpotlightCard({
 }) {
     return (
         <div className={`relative p-1 ${className}`}>
-            {/* Card body */}
+            {/* Card body - remove justify-center so it can expand */}
             <div
-                className="relative w-full h-full rounded-[22px] p-10 md:p-14 lg:p-16 overflow-hidden z-1 flex flex-col justify-center shadow-2xl border-2"
+                className="relative w-full h-full rounded-[22px] p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden z-1 shadow-2xl border-2"
                 style={{ backgroundColor: bgColor }}
             >
                 {/* Grid pattern */}
@@ -28,7 +28,7 @@ export default function SpotlightCard({
 
                 {/* Content with optional opacity control */}
                 <div
-                    className="relative z-2"
+                    className="relative z-2 h-full"
                     style={{
                         opacity: contentOpacity,
                         transition: "opacity 0.15s ease-out",
