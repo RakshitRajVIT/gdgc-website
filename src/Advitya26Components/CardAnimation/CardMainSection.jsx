@@ -28,7 +28,12 @@ const getScrollDistance = (cardCount, cardWidthVw, gapVw = DEFAULT_GAP_VW) => {
     return (cardCount - 1) * (cardWidthVw + gapVw);
 };
 
-const calculateCardScale = (cardRect, viewportWidth, minScale = 0.75, maxScale = 1) => {
+const calculateCardScale = (
+    cardRect,
+    viewportWidth,
+    minScale = 0.75,
+    maxScale = 1,
+) => {
     const viewportCenter = viewportWidth / 2;
     const cardCenter = cardRect.left + cardRect.width / 2;
     const distanceFromCenter = Math.abs(viewportCenter - cardCenter);
@@ -38,7 +43,11 @@ const calculateCardScale = (cardRect, viewportWidth, minScale = 0.75, maxScale =
     return minScale + proximity * (maxScale - minScale);
 };
 
-const calculateScrollProgress = (containerRect, containerHeight, viewportHeight) => {
+const calculateScrollProgress = (
+    containerRect,
+    containerHeight,
+    viewportHeight,
+) => {
     const scrollableDistance = containerHeight - viewportHeight;
     if (scrollableDistance <= 0) return 0;
     return Math.max(0, Math.min(1, -containerRect.top / scrollableDistance));
@@ -50,6 +59,7 @@ export default function CardMainSection({
     bgColor = "#3B28CC",
     cardSize = "lg",
     direction = "horizontal",
+    scrollSlowdown = 2.5, // Higher = slower horizontal movement (requires more vertical scroll)
 }) {
     const isHorizontal = direction === "horizontal";
     const containerRef = useRef(null);
@@ -62,7 +72,12 @@ export default function CardMainSection({
     const cardWidthVw = getCardWidthVw(cardSize);
     const gapVw = DEFAULT_GAP_VW;
     const initialOffset = getInitialOffset(cardWidthVw);
-    const scrollDistance = getScrollDistance(childArray.length, cardWidthVw, gapVw);
+    const scrollDistance = getScrollDistance(
+        childArray.length,
+        cardWidthVw,
+        gapVw,
+    );
+    const slowdown = Math.max(1, Number(scrollSlowdown) || 1);
 
     // Horizontal scroll effect based on vertical scroll position
     useEffect(() => {
@@ -73,7 +88,11 @@ export default function CardMainSection({
 
         const handleScroll = () => {
             const rect = container.getBoundingClientRect();
-            const progress = calculateScrollProgress(rect, container.offsetHeight, window.innerHeight);
+            const progress = calculateScrollProgress(
+                rect,
+                container.offsetHeight,
+                window.innerHeight,
+            );
             setTranslateX(progress * scrollDistance);
         };
 
@@ -91,7 +110,10 @@ export default function CardMainSection({
             const viewportWidth = window.innerWidth;
             cardRefs.current.forEach((ref, index) => {
                 if (!ref) return;
-                const scale = calculateCardScale(ref.getBoundingClientRect(), viewportWidth);
+                const scale = calculateCardScale(
+                    ref.getBoundingClientRect(),
+                    viewportWidth,
+                );
                 setScales((prev) => ({ ...prev, [index]: scale }));
             });
         };
@@ -117,14 +139,16 @@ export default function CardMainSection({
                 root: null,
                 rootMargin: "-5% 0px -5% 0px",
                 threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-            }
+            },
         );
 
         cardRefs.current.forEach((ref) => ref && observer.observe(ref));
         return () => observer.disconnect();
     }, [childArray.length, isHorizontal]);
 
-    const containerHeight = isHorizontal ? `calc(100vh + ${scrollDistance}vw)` : "auto";
+    const containerHeight = isHorizontal
+        ? `calc(100vh + ${scrollDistance * slowdown}vw)`
+        : "auto";
 
     const cardStyle = (index) => ({
         width: `${cardWidthVw}vw`,
@@ -184,7 +208,11 @@ export default function CardMainSection({
                         </div>
                     ))}
                     {/* Spacer for centering last card */}
-                    <div className="shrink-0" style={{ width: `${initialOffset}vw` }} aria-hidden="true" />
+                    <div
+                        className="shrink-0"
+                        style={{ width: `${initialOffset}vw` }}
+                        aria-hidden="true"
+                    />
                 </div>
             </section>
         </div>
